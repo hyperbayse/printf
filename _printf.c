@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 
 	output = malloc(10 * sizeof(char));
 	if (!(output))
-		return (1);
+		return (2);
 	va_start(arg_p, format);
 	while (format[x] != '\0')
 	{
@@ -37,6 +37,7 @@ int _printf(const char *format, ...)
 					output[i++] = s[j++];
 				break;
 			default:
+				output[i++] = format[x];
 				break;
 			}
 			j = 0;
