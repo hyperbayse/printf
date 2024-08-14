@@ -52,7 +52,6 @@ int _printf(const char *format, ...)
 	va_end(arg_p);
 
 	/* print the stored strings to the standard output */
-	write(1, output, i);
+	return (write(1, output, i));
 	free(output);
-	return (i);
 }
