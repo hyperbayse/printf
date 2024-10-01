@@ -43,15 +43,17 @@ int _printf(const char *format, ...)
 				break;
 			}
 
-			/*if (_strlen(output) == BUFFER - 1)
-			{
-				write(1, output, i);
-				free(output);
+			/**
+			*if (_strlen(output) == BUFFER - 1)
+			*{
+			*	write(1, output, i);
+			*	free(output);
 
-				output = malloc(BUFFER);
-				if (output == NULL)
-					return (2);
-			}*/
+			*	output = malloc(BUFFER);
+			*	if (output == NULL)
+			*		return (2);
+			*}
+			*/
 
 
 			j = 0;
