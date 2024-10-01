@@ -17,7 +17,6 @@ int _printf(const char *format, ...)
 	va_list arg_p;
 
 	i = x = j = 0;
-
 	output = malloc(BUFFER);
 	if (output == NULL)
 		return (2);
@@ -42,20 +41,6 @@ int _printf(const char *format, ...)
 				output[i++] = format[x];
 				break;
 			}
-
-			/**
-			*if (_strlen(output) == BUFFER - 1)
-			*{
-			*	write(1, output, i);
-			*	free(output);
-
-			*	output = malloc(BUFFER);
-			*	if (output == NULL)
-			*		return (2);
-			*}
-			*/
-
-
 			j = 0;
 		}
 		else
