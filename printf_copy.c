@@ -11,17 +11,18 @@
  */
 int _printf(const char *format, ...)
 {
-	int x, i, j;
+	int x, i, j, r;
 	char c;
 	char *s, *output;
 	va_list arg_p;
 
 	i = x = j = 0;
 
-	output = malloc(BUFFER);
+	output = malloc(10 * sizeof(char));
 	if (output == NULL)
 		return (2);
 	va_start(arg_p, format);
+	
 	while (format[x] != '\0')
 	{
 		if (format[x] == '%')
@@ -35,6 +36,7 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				s = va_arg(arg_p, char *);
+
 				while (s[j] != '\0')
 					output[i++] = s[j++];
 				break;
@@ -42,18 +44,6 @@ int _printf(const char *format, ...)
 				output[i++] = format[x];
 				break;
 			}
-
-			/*if (_strlen(output) == BUFFER - 1)
-			{
-				write(1, output, i);
-				free(output);
-
-				output = malloc(BUFFER);
-				if (output == NULL)
-					return (2);
-			}*/
-
-
 			j = 0;
 		}
 		else
