@@ -44,6 +44,11 @@ int _printf(const char *format, ...)
 		else
 			output[i++] = format[x];
 		x++;
+
+
+
+
+
 	}
 	va_end(arg_p);
 	write(1, output, i);
