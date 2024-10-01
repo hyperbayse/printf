@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 	va_list arg_p;
 
 	i = x = j = 0;
-	output = malloc(BUFFER);
+
+	output = malloc(10 * sizeof(char));
 	if (output == NULL)
 		return (2);
 	va_start(arg_p, format);
