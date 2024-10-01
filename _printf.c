@@ -36,8 +36,8 @@ int _printf(const char *format, ...)
 					output[i++] = s[j++];
 				break;
 			default:
-				/*output[i++] = format[x];*/
-				exit(2);
+				output[i++] = format[x];
+				break;
 			}
 			j = 0;
 		}
