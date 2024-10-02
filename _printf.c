@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	i = x = j = 0;
 
 	if (format == NULL)
-		return (1);
+		return (-1);
 
 	output = malloc(BUFFER);
 	if (output == NULL)
@@ -59,7 +59,7 @@ int _printf(const char *format, ...)
 				if (format[x] == '%')
 					output[i++] = format[x];
 				else if (format[x] == '\0')
-					break;
+					return (-1);
 				else
 				{
 					if (format[x] != '\0')
