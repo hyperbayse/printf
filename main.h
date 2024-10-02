@@ -10,5 +10,7 @@
 int _printf(const char *format, ...);
 int _strlen(char *s);
 char *increase_buffer_size(char *old_buffer, int buffer_count);
+void case_s(char *s, char *output, int buffer_count, int si, int oi);
+int case_default(const char *format, int x, char *output, int i);
 
 #endif /* _PRINTF */
