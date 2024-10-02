@@ -85,7 +85,7 @@ int case_default(const char *format, int x, char *output, unsigned int *i)
 	if (format[x] == '\0')
 	{
 		*i = -1;
-		return (*i);
+		return (-1);
 	}
 
 	if (format[x] == '%')
