@@ -1,6 +1,12 @@
 #include "main.h"
 
-/* increases the initially allocated space and copy the old content to it */
+/**
+ * increase_bufer_size - increases the initially allocated space 
+ * and copy the old content to it
+ * @old_buffer: the old buffer parsed
+ * @buffer_count: number of times the memry is being incremented
+ * Return: new_buffer on success and NULL otherwise
+ */
 char *increase_buffer_size(char *old_buffer, int buffer_count)
 {
     unsigned int i = 0;

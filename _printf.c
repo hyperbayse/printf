@@ -44,11 +44,6 @@ int _printf(const char *format, ...)
 					s = "(null)";
 				}
 
-				/**
-				* check if the lenght of string argument is more than
-				* the remaining space in the allocated buffer
-				* if yes, increase the buffer size
-				*/
 				if (_strlen(s) > (BUFFER * buffer_count) - _strlen(output))
 					output = increase_buffer_size(output, buffer_count);
 
@@ -69,8 +64,6 @@ int _printf(const char *format, ...)
 						break;
 					}
 				}
-				/*return (0);*/
-				/*output[i++] = format[x];*/
 			}
 			j = 0;
 		}
