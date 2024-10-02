@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	unsigned int x, i;
-	int buffer_count = 1;
+	int buffer_count = 1, status;
 	char c;
 	char *s, *output;
 	va_list arg_p;
@@ -38,7 +38,9 @@ int _printf(const char *format, ...)
 				case_s(s, &output, &buffer_count, &i);
 				break;
 			default:
-				case_default(format, x, output, &i);
+				status = case_default(format, x, output, &i);
+				if (status == -1)
+					return (-1);
 			}
 		}
 		else

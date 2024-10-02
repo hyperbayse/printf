@@ -83,10 +83,7 @@ void case_s(char *s, char **output, int *buffer_count, unsigned int *oi)
 int case_default(const char *format, int x, char *output, unsigned int *i)
 {
 	if (format[x] == '\0')
-	{
-		*i = -1;
 		return (-1);
-	}
 
 	if (format[x] == '%')
 		output[(*i)++] = format[x];
