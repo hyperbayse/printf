@@ -15,8 +15,9 @@ int _printf(const char *format, ...)
 	i = x = 0;
 	if (format == NULL)
 		return (-1);
-
 	output = increase_buffer_size(output, &buffer_count);
+	if (output == NULL)
+		return (-1);
 	va_start(arg_p, format);
 	while (format[x] != '\0')
 	{
@@ -24,8 +25,7 @@ int _printf(const char *format, ...)
 			output = increase_buffer_size(output, &buffer_count);
 		if (format[x] == '%')
 		{
-			x++;
-			switch (format[x])
+			switch (format[++x])
 			{
 			case 'c':
 				output[i++] = (c = va_arg(arg_p, int));
