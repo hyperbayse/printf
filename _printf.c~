@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 
 				if (_strlen(s) > (BUFFER * buffer_count) - _strlen(output))
 					output = increase_buffer_size(output, buffer_count);
-				while (s[j] != '\0')
+				while (s[si] != '\0')
 					output[i++] = s[j++];
 				/*case_s(s, output, buffer_count, j, i);*/
 				break;
