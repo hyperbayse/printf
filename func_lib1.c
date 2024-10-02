@@ -40,7 +40,8 @@ char *increase_buffer_size(char *old_buffer, int *buffer_count)
 		new_buffer[i] = old_buffer[i];
 		i++;
 	}
-	free(old_buffer);
+	if (_strlen(old_buffer) != 0)
+		free(old_buffer);
 	return (new_buffer);
 }
 

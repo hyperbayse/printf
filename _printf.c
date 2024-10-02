@@ -8,17 +8,15 @@
 int _printf(const char *format, ...)
 {
 	unsigned int x, i;
-	int buffer_count = 1, status;
-	char c;
-	char *s, *output;
+	int buffer_count = 1;
+	char *s, *output = "\0", c;
 	va_list arg_p;
 
 	i = x = 0;
 	if (format == NULL)
 		return (-1);
-	output = malloc(BUFFER);
-	if (output == NULL)
-		return (-1);
+
+	output = increase_buffer_size(output, &buffer_count);
 	va_start(arg_p, format);
 	while (format[x] != '\0')
 	{
@@ -30,16 +28,14 @@ int _printf(const char *format, ...)
 			switch (format[x])
 			{
 			case 'c':
-				c = va_arg(arg_p, int);
-				output[i++] = c;
+				output[i++] = (c = va_arg(arg_p, int));
 				break;
 			case 's':
 				s = va_arg(arg_p, char *);
 				case_s(s, &output, &buffer_count, &i);
 				break;
 			default:
-				status = case_default(format, x, output, &i);
-				if (status == -1)
+				if (case_default(format, x, output, &i) == -1)
 					return (-1);
 			}
 		}
