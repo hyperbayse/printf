@@ -7,23 +7,23 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int x, i, j;
+	unsigned int x, i;
 	int buffer_count = 1;
 	char c;
 	char *s, *output;
 	va_list arg_p;
 
-	i = x = j = 0;
+	i = x = 0;
 	if (format == NULL)
 		return (-1);
 	output = malloc(BUFFER);
 	if (output == NULL)
-		return (2);
+		return (-1);
 	va_start(arg_p, format);
 	while (format[x] != '\0')
 	{
 		if (_strlen(output) == (BUFFER * buffer_count) - 1)
-			output = increase_buffer_size(output, buffer_count);
+			output = increase_buffer_size(output, &buffer_count);
 		if (format[x] == '%')
 		{
 			x++;
@@ -35,19 +35,11 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				s = va_arg(arg_p, char *);
-				if (s == NULL)
-					s = "(null)";
-
-				if (_strlen(s) > (BUFFER * buffer_count) - _strlen(output))
-					output = increase_buffer_size(output, buffer_count);
-				while (s[j] != '\0')
-					output[i++] = s[j++];
-				/*case_s(s, output, buffer_count, j, i);*/
+				case_s(s, output, &buffer_count, &i);
 				break;
 			default:
-				case_default(format, x, output, i);
+				case_default(format, x, output, &i);
 			}
-			j = 0;
 		}
 		else
 			output[i++] = format[x];

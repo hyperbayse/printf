@@ -35,14 +35,7 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				s = va_arg(arg_p, char *);
-				if (s == NULL)
-					s = "(null)";
-
-				if (_strlen(s) > (BUFFER * buffer_count) - _strlen(output))
-					output = increase_buffer_size(output, buffer_count);
-				while (s[si] != '\0')
-					output[i++] = s[j++];
-				/*case_s(s, output, buffer_count, j, i);*/
+				case_s(s, output, buffer_count, j, i);
 				break;
 			default:
 				case_default(format, x, output, i);
