@@ -16,7 +16,7 @@ int _printf(const char *format, ...)
 	i = x = j = 0;
 
 	if (format == NULL)
-		return (NULL);
+		return (1);
 
 	output = malloc(BUFFER);
 	if (output == NULL)
