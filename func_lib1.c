@@ -34,9 +34,9 @@ char *increase_buffer_size(char *old_buffer, int *buffer_count)
 
 	if (new_buffer == NULL)
 		return (NULL);
-	
+
 	if (*old_buffer == '\0')
-		return(new_buffer);
+		return (new_buffer);
 
 	while (old_buffer[i] != '\0')
 	{
