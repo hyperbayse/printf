@@ -86,11 +86,11 @@ int case_default(const char *format, int x, char *output, unsigned int *i)
 		return (-1);
 
 	if (format[x] == '%')
-		output[*i++] = format[x];
+		output[(*i)++] = format[x];
 	else
 	{
-		output[*i++] = format[x - 1];
-		output[*i++] = format[x];
+		output[(*i)++] = format[x - 1];
+		output[(*i)++] = format[x];
 	}
 	return (0);
 }
