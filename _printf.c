@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 				break;
 			case 's':
 				s = va_arg(arg_p, char *);
-				case_s(s, output, &buffer_count, &i);
+				case_s(s, &output, &buffer_count, &i);
 				break;
 			default:
 				case_default(format, x, output, &i);

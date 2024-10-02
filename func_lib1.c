@@ -53,22 +53,22 @@ char *increase_buffer_size(char *old_buffer, int *buffer_count)
  * Return: success
  */
 
-void case_s(char *s, char *output, int *buffer_count, unsigned int *oi)
+void case_s(char *s, char **output, int *buffer_count, unsigned int *oi)
 {
 	int si = 0;
 
 	if (s == NULL)
 		s = "(null)";
 
-	if (_strlen(s) > (BUFFER * (*buffer_count)) - _strlen(output))
+	if (_strlen(s) > (BUFFER * (*buffer_count)) - _strlen(*output))
 	{
-		output = increase_buffer_size(output, buffer_count);
-		if (output == NULL)
+		*output = increase_buffer_size(*output, buffer_count);
+		if (*output == NULL)
 			return;
 	}
 
 	while (s[si] != '\0')
-		output[(*oi)++] = s[(si)++];
+		(*output)[(*oi)++] = s[(si)++];
 }
 
 /**
