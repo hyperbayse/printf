@@ -71,7 +71,7 @@ void case_s(char *s, char **output, int *buffer_count, unsigned int *oi)
 	}
 
 	while (s[si] != '\0')
-		(*output)[(*oi)++] = s[(si)++];
+		(*output)[(*oi)++] = s[si++];
 }
 
 /**
