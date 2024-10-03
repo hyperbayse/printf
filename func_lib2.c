@@ -12,6 +12,7 @@ void case_di(char *output, int *i, int number)
 {
 	int x = number, j = 0;
 	char *temp = malloc(32);
+
 	if (temp == NULL)
 		return;
 
@@ -26,6 +27,6 @@ void case_di(char *output, int *i, int number)
 
 	while (j > 0)
 		output[(*i)++] = temp[--j];
-	
+
 	free(temp);
 }
