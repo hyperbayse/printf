@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	unsigned int x, i;
-	int buffer_count = 1, di;
+	int buffer_count = 1;
 	char *s, *output = "\0", c;
 	va_list arg_p;
 
