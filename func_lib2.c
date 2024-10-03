@@ -10,8 +10,8 @@
 
 void case_di(char *output, unsigned int *i, int number)
 {
-	int x = number, j = 0;
-	char *temp = malloc(32);
+	long int x = number, j = 0;
+	char *temp = malloc(64);
 
 	if (temp == NULL)
 		return;
