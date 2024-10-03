@@ -41,7 +41,10 @@ void case_di(char *output, unsigned int *i, int number)
 
 
 /**
- * case_b -
+ * case_b - handle the binary format specifier
+ * @output: output buffer
+ * @i: output iterator
+ * @binary_value: the binary value to be converted
  * Return: success
  */
 
@@ -73,5 +76,5 @@ void case_b(char *output, int *i, unsigned int binary_value)
 		output[(*i)++] = temp[--j];
 
 	free(temp);
-	(*i)--;	
+	(*i)--;
 }
