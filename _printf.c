@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _printf - prints to the standard output
@@ -40,7 +41,8 @@ int _printf(const char *format, ...)
 				case_di(output, &i, di);
 				break;
 			case 'b':
-				b = va_arg(arg_p, int);
+				b = va_arg(arg_p, unsigned int);
+				printf("%u\n", b * 2);
 				case_b(output, &i, b);
 				break;
 			default:
