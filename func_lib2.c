@@ -8,7 +8,7 @@
  * Return: success
  */
 
-void case_di(char *output, int *i, int number)
+void case_di(char *output, unsigned int *i, int number)
 {
 	int x = number, j = 0;
 	char *temp = malloc(32);
@@ -25,8 +25,9 @@ void case_di(char *output, int *i, int number)
 
 	j = _strlen(temp);
 
-	while (j > 0)
+	while (j >= 0)
 		output[(*i)++] = temp[--j];
 
 	free(temp);
+	(*i)--;
 }
